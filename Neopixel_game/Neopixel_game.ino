@@ -3,6 +3,7 @@
 #define NUMPIXELS 32
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+unsigned long int oldmillis=0;
 
 void startup(){
     pixels.setPixelColor(15,pixels.Color(255,0,0));
@@ -29,6 +30,11 @@ void startup(){
     pixels.setPixelColor(0,pixels.Color(255,0,0));
     pixels.setPixelColor(31,pixels.Color(0,0,255));
     pixels.show();
+}
+
+void pong(){
+    oldmillis=millis();
+    
 }
 
 void setup() {
