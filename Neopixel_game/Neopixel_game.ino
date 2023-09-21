@@ -110,20 +110,10 @@ void getready(){
     }
 }
 
-void setup(){
-    pixels.begin();
-    Serial.begin(9600);
-    startup();
-    pongrandom();
-    getready();
-}
-
-//These are functions used in the loop function
 bool RedBall=false;
 bool BlueBall=false;
 int BallPosition=0;
-
-void gameplay(){
+void ready(){
     if (start==false){
         RedBall=true;
         BallPosition=1;
@@ -139,6 +129,19 @@ void gameplay(){
 
 }
 
+void setup(){
+    pixels.begin();
+    Serial.begin(9600);
+    startup();
+    pongrandom();
+    getready();
+    ready();
+}
+
+//These are functions used in the loop function
+void gameplay(){
+    //Set up a button for each player
+}
+
 void loop(){
-    gameplay();
 }
