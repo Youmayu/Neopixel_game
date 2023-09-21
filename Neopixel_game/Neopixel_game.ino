@@ -36,7 +36,5 @@ void setup() {
     startup();
 }
 
-
-
 void loop(){
 }
